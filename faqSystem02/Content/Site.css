@@ -1,0 +1,59 @@
+﻿body {
+    margin-top: 116px;
+    margin-left: 70px;
+    margin-right: 70px;
+    background-color: pink;
+}
+.page-header {
+    text-align: center;
+    border: 1px solid #4cff00;
+    background-color: rgb(178, 186, 187);
+    padding: 12px;
+    padding-bottom:30px;
+}
+.sidebarTable {
+    background-color: brown;
+    border: 1px solid #4cff00;
+}
+.page-header-portion {
+    align-content:center;
+}
+.search-bar-portion {
+    
+}
+.search-input {
+    width: 80%;
+}
+.sidebarTable {
+    width: 250px;
+}
+.menuSideBarButton {
+    width: 100%;
+    height: 100%;
+}
+.menuSideBar{
+    height:50px;
+    
+}
+.renderPortion {
+    width:100%;
+
+
+    background-color: greenyellow;
+    /*float:right;
+    width: 79%;*/
+}
+.sidebarTablePortion {
+    /*float: left;*/
+}
+.sidebarAndContent {
+    display: flex;
+}
+input:hover{
+    /*backface-visibility:hidden;*/
+    /*visibility:hidden*/
+    background-color:yellow;
+}
+.footer-location {
+    text-align: right;
+    }

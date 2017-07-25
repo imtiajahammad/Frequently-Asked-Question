@@ -1,0 +1,69 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+
+
+@model IPagedList<faqSystem02.Models.FaqModel>
+
+
+@{
+    ViewBag.Title = "CategoryButtonsAction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    @Styles.Render("~/Content/css");
+}
+
+<div class="gool">
+
+
+    @foreach (var obj in Model)
+    {
+        <div class="tableborder">
+            <table class="tableClass">
+                <tr class="tableRow">
+
+                    <td class="tdcla"><p> <a href="/home"> <strong> @Html.DisplayFor(modelItem => obj.question)</strong> </a> </p></td>
+                </tr>
+
+                @{
+                    int j = 0; string aLine;
+                    var i = Html.DisplayFor(modelItem => obj.answer);
+                    StringReader strReader = new StringReader(i.ToString());
+                    string text = string.Empty;
+                    while (true && j < 3)
+                    {
+                        aLine = strReader.ReadLine();
+                        if (aLine != null)
+                        {
+                            text = text + aLine + " ";
+                            j++;
+                        }
+                        else
+                        {
+                            text = text + "\n";
+                            break;
+                        }
+                    }
+
+
+                }
+
+
+                <tr class="tableRow">
+                    <td class="tdcla"><p>@text</p></td>
+                </tr>
+
+
+            </table>
+
+
+        </div>
+        <br />
+                    }
+
+
+    @Html.PagedListPager(Model, page => Url.Action("CategoryButtonsAction", new { page }))
+
+
+</div>
+

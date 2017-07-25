@@ -1,0 +1,39 @@
+﻿
+@model faqSystem02.Models.FaqModel
+
+@{
+    ViewBag.Title = "SingleQuestionView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    @Styles.Render("~/Content/css");
+}
+
+<div class="gool">
+
+
+    
+        <div class="tableborder">
+            <table class="tableClass">
+                <tr class="tableRow">
+                    
+                    <td class="tdcla"><p> <strong> @Model.question </strong> </p></td>
+                </tr>
+
+                <tr class="tableRow">
+                    <td class="tdcla"><p>@Model.answer</p></td>
+                </tr>
+
+
+            </table>
+
+
+        </div>
+        <br />
+                    
+
+
+    
+
+
+</div>
+

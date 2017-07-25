@@ -1,0 +1,85 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css");
+    
+</head>
+
+
+<body>
+    
+    <div class="page-header">
+        <div class="page-header-portion">
+            <h3>Have a question?</h3>
+        </div>
+        <div class="page-header-portion">
+            <h4>if you have any question, you can ask below or enter what are you looking for?</h4>
+        </div>
+
+        <div class="page-header-portion">
+            @using (Html.BeginForm("SearchBy", "FaqModel", FormMethod.Get))
+            {
+                <div class="search-bar-portion">
+                    <input class="search-input" placeholder="Write something" name="searchItem" /> 
+                    <button type="submit">search...</button>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <div class="sidebarAndContent">
+        <div class="sidebarTablePortion">
+            <table class="sidebarTable">
+                <tr>
+                    
+
+                        <td class="menuSideBar"> <a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Administrative"})'> <input class="menuSideBarButton" type=submit value="Administration"> </a> </td>
+</tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Examination"})'> <input class="menuSideBarButton" type=submit value="Examination"> </a></td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Scholarship"})'> <input class="menuSideBarButton" type=submit value="Scholarship"> </a></td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Payment"})'> <input class="menuSideBarButton" type=submit value="Payment"> </a></td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Foundation"})'> <input class="menuSideBarButton" type=submit value="Foundation"> </a></td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Registration"})'> <input class="menuSideBarButton" type=submit value="Registration"> </a> </td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Certificate"})'> <input class="menuSideBarButton" type=submit value="Certificate"> </a></td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Others"})'> <input class="menuSideBarButton" type=submit value="Others"> </a></td>
+                </tr>
+                <tr>
+                    <td class="menuSideBar"><a href='@Url.Action("CategoryButtonsAction", "FaqModel", new { categoryName ="Contact"})'> <input class="menuSideBarButton" type=submit value="Contact"> </a> </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="renderPortion">
+            @RenderBody()
+        </div>
+
+    </div>
+    <hr />    
+        <footer >
+            @*<div >*@
+                <p class="footer-location">&copy; @DateTime.Now.Year - It's a imtiaj ahammad's pen</p>
+            @*</div>*@
+        </footer>
+    
+
+</body>
+</html>
